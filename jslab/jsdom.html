@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS LAb</title>
+  </head>
+  <body>
+    <div>My div 1</div>
+
+    <button id="dynbtn" > Dyanamic Event </button>
+
+    <button onclick="dynamicEventTest()">
+        Dyanamic event II 
+    </button>
+
+    <div id="mydiv"> my page  information </div>
+    <button onclick="showHideDiv()">Show/hide</button>
+    <br> <br>
+   
+
+ 
+    <script>
+        function dynamicEventTest(){
+            alert('dynamic listener event')
+        }
+       document.getElementById('dynbtn') .addEventListener('click',dynamicEventTest,false)
+       function showHideDiv(){
+        var currentStyle=document.getElementById('mydiv').style.display
+        if(currentStyle=='none'){
+            document.getElementById('mydiv').style.display='block'
+        }else{
+            document.getElementById('mydiv').style.display='none'
+        }
+       }
+    </script>
+  </body>
+</html>
