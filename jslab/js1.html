@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js file</title>
+</head>
+<body>
+    UserName: <input type="text" id="name"/>
+    <button onclick="sayHi()">click to say hi</button>
+    <p class="disp">
+
+    </p>
+    <br>
+    <button onclick="changeColor()"> change Bg color</button>
+    
+<button onclick="resetBg()"> Reset BG to Original</button>
+<div> my div blue</div>
+<div> my div yellow</div>
+  <script>
+    function sayHi(){
+        const naam=document.getElementById('name').value
+       alert('hi ' + naam ) 
+       document.querySelector('.disp').innerHTML=` welcome ${naam}`
+       document.querySelector('.disp').style.fontSize='30px';
+       document.querySelector('.disp').style.color='blue';
+
+    }
+    function changeColor(){
+        document.querySelector('body').style.backgroundColor='red';
+        document.getElementsByTagName('div')[0].style.backgroundColor='blue';
+            document.getElementsByTagName('div')[1].style.backgroundColor='yellow';
+    }
+
+    function resetBg(){
+        document.body.style.backgroundColor='white';
+        document.querySelector('div').style.backgroundColor='white';
+            document.getElementsByTagName('div')[1].style.backgroundColor='white';
+
+    }
+
+  </script>
+</body>
+</html>
