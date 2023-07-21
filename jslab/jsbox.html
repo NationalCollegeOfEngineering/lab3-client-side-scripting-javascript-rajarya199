@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js conf box</title>
+</head>
+<body>
+    <button onclick="alertMsg()"> click here</button>
+    <button onclick="askConfirm()"  > delete  </button>
+    <div id="delbox"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, maxime?</div>
+    <button onclick="showPrompt()"> Demo prompt</button>
+    <div id="write"></div>
+    <script>
+        function askConfirm(){
+            var result=confirm('Do you want to delete it?')
+            if(result==true){
+                document.getElementById('delbox').remove()
+            }else{
+                return;
+            }
+        }
+        function showPrompt(){
+            var result=prompt('what is your name?')
+            document.getElementById('write').innerHTML='welcome '+result;
+        }
+        function alertMsg(){
+            alert('this is alert msg')
+        }
+    </script>
+</body>
+</html>
