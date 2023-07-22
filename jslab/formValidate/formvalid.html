@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        padding:20px;
+        display:flex;
+        align-items: center;
+  justify-content: center
+
+    }
+    legend{
+        font-size: larger;
+    }
+    fieldset{
+        padding:20px;
+    }
+    div{
+        padding:15px;
+        display:flex;
+        flex-wrap: wrap;
+        font-size: large;
+    }
+</style>
+<body>
+    <form action="" method="get" onsubmit=" return formValidate()">
+        <fieldset>
+            <legend>Information</legend>
+        <div>
+            <label for="name"> User Name:</label>
+            <input type="text" id="name"  name="name" placeholder="enter your name"> 
+        </div>
+            
+        <div>
+            <label for="email"> E-mail:</label>
+            <input type="email" id="email"  name="email" placeholder="your email"> 
+        </div>
+           
+        <div>
+            <label for="password"> Password:</label>
+            <input type="password" id="pwd" name="password"> 
+        </div>
+        <h3 id="errorbox">
+
+        </h3>
+        <div>
+            <button type="submit" id="btn1">Submit</button>
+        </div>
+  </fieldset>
+  </form>     
+  <script>
+    function formValidate(){
+        var  naam=document.getElementById('name').value;
+        var email=document.getElementById('email').value;
+        var paswd=document.getElementById('pwd').value;
+        var err=''
+        if(naam==''){
+            err='name is required'
+        }else if( naam.length<3){
+            err='name req at least 3 character'
+        }else if(email==''){
+            err='email is required'
+        }else if(!email.match(/^([a-zA-Z0-9])+\@+([a-z])+\.+([a-z]){2,3}$/)){
+            err='enter a valid email'
+        }
+        else if(paswd=''){
+            err='password is reuired'
+        }else if(paswd.length<8){
+            err=' password needs min 8 character  '
+        }else{
+            err=''
+        }
+            if(err !=''){
+                document.getElementById('errorbox').innerHTML=err
+                return false
+            }else{
+                return
+            }
+
+        }
+    
+  </script>   
+</body>
+</html>
